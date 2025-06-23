@@ -50,3 +50,33 @@ button:hover {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+/* 💖 Heart Animation Section */
+#heart-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center center / contain;
+  animation: flyUp 3s ease-in forwards;
+  opacity: 0.8;
+}
+
+@keyframes flyUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) scale(1.5);
+    opacity: 0;
+  }
+}

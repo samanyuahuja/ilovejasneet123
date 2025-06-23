@@ -8,6 +8,7 @@ function checkPassword() {
     document.getElementById("passwordInput").style.display = "none";
     document.querySelector("button").style.display = "none";
     document.querySelector("p").innerHTML = "HAPPY 3 MONTHS BABY! 💖";
+    launchHearts(); // 💖 Add this line
   } else {
     alert("Wrong password! Try again.");
     document.getElementById("passwordInput").value = "";
@@ -20,3 +21,20 @@ document.getElementById('passwordInput').addEventListener('keypress', function(e
     checkPassword();
   }
 });
+
+/* 💖 Heart Animation Function */
+function launchHearts() {
+  const heartContainer = document.getElementById("heart-container");
+
+  for (let i = 0; i < 20; i++) {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (1 + Math.random() * 1.5) + "s";
+    heartContainer.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 3000);
+  }
+}
